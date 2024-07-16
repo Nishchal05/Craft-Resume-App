@@ -57,7 +57,6 @@ app.get('/signup',async(req,res)=>{
     console.error("error in catch")
   }
 })
-
 app.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -65,7 +64,7 @@ app.post('/login', async (req, res) => {
     if (user) {
       res.json(user);
     } else {
-      res.status(404).send('User not found');
+      res.status(404).send({ message: 'User already exists' });
     }
   } catch (error) {
     console.error('Error logging in:', error);
