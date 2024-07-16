@@ -51,7 +51,7 @@ app.post('/signup', async (req, res) => {
 });
 app.get('/signup',async(req,res)=>{
   try{
-    const signupdata = await SignUp.find();
+    const signupdata = await SignUp.findOne().sort({ createdAt: -1 });
     res.json(signupdata);
   }catch(error){
     console.error("error in catch")
