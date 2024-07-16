@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import "./Login.css";
 import { Backendlink } from '../../Backendlink';
 import { useNavigate } from 'react-router-dom';
-
+import { MatcherContext } from '../../Login';
+import { useContext } from 'react';
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { setmatch } = useContext(MatcherContext); 
   const navigate = useNavigate();
 
   const signupDetail = async () => {
@@ -25,6 +27,7 @@ const SignUp = () => {
       }
 
       if (response.ok) {
+        setmatch(true)
         navigate('/');
       }
     } catch (error) {
