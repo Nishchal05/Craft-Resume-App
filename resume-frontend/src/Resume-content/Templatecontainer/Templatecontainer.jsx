@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Templatecontainer.css";
 import { Backendlink } from "../../Backendlink";
 import { Link } from "react-router-dom";
 const Templatecontainer = () => {
-  const auth = JSON.parse(localStorage.getItem("user"));
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [mobileNo, setmobileNo] = useState("");
@@ -38,6 +37,9 @@ const Templatecontainer = () => {
         console.error("error in catch")
     }
   }
+  useEffect(()=>{
+    userdata()
+  },[])
   const userid=data._id;
   const SendData = async () => {
     try {
