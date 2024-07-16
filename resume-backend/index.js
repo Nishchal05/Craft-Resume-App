@@ -49,6 +49,14 @@ app.post('/signup', async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
+app.get('/signup',async(req,res)=>{
+  try{
+    const signupdata = await SignUp.find();
+    res.json(signupdata);
+  }catch(error){
+    console.error("error in catch")
+  }
+})
 
 app.post('/login', async (req, res) => {
   try {
