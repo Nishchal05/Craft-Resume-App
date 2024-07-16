@@ -29,7 +29,7 @@ export const ResumeBody = () => {
             setSelectedTemplate(val.Id)
         }}>
         <div onClick={Templateselect}><img src={val.Template} alt={val.Id} height={300}/>
-        <div className='Templateselction'>{val.Id}</div></div>
+        <div className='Templateselction'>Template{index}</div></div>
         </div>
     ))}
     </div>
