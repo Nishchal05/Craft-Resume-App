@@ -28,7 +28,17 @@ const Templatecontainer = () => {
   const [stack1, setstack1] = useState("");
   const [projecturl1, setprojecturl1] = useState("");
   const [projectlearn1, setprojectlearn1] = useState("");
-  const userid = auth._id;
+  const [data,setdata]=useState([]);
+  const userdata=async()=>{
+    try{
+        const response=await fetch(`${Backendlink}/signup`)
+        const data= await response.json();
+        setdata(data);
+    }catch(error){
+        console.error("error in catch")
+    }
+  }
+  const userid=data._id;
   const SendData = async () => {
     try {
       const response = await fetch(`${Backendlink}/Resume`, {
