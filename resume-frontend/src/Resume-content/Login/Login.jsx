@@ -19,15 +19,13 @@ const SignUp = () => {
       });
 
       const data = await response.json();
+      if(data.message){
+        alert("Donot have an Account")
+        navigate('/SignUp')
+      }
 
       if (response.ok) {
-        localStorage.setItem('user', JSON.stringify(data));
         navigate('/');
-      } else {
-        alert(data.message || "An error occurred");
-        if (data.message === "User already exists") {
-          navigate('/login');
-        }
       }
     } catch (error) {
       console.error("Error:", error);
@@ -59,7 +57,7 @@ const SignUp = () => {
           </label>
           <button onClick={signupDetail}>Create</button>
         </div>
-        <p>Donot have Account <a href='/SignUp'>Register?</a></p>
+        <p className='login-link'>Donot have Account <a href='/SignUp'>Register?</a></p>
       </div>
     </div>
   );
