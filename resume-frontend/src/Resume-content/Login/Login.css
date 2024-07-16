@@ -23,3 +23,6 @@ label{
     display: flex;
     gap: 5px;
 }
+.login-link a{
+    color: blue;
+}
