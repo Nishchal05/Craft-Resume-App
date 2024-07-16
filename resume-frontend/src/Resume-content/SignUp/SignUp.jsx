@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import "./SignUp.css";
 import { Backendlink } from '../../Backendlink';
 import { useNavigate } from 'react-router-dom';
+import { MatcherContext } from '../../Login'; 
 
 const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { setMatch } = useContext(MatcherContext);
   const navigate = useNavigate();
 
   const signupDetail = async () => {
@@ -18,12 +20,10 @@ const SignUp = () => {
           'Content-Type': 'application/json'
         }
       });
-
       const data = await response.json();
-
       if (response.ok) {
-        localStorage.setItem('user', JSON.stringify(data));
-        navigate('/');
+        setMatch(true); 
+        navigate('/'); 
       } else {
         alert(data.message || "An error occurred");
         if (data.message === "User already exists") {
@@ -69,7 +69,7 @@ const SignUp = () => {
           </label>
           <button onClick={signupDetail}>Create</button>
         </div>
-        <p>Already Have an Account <a href='/login'>Login?</a></p>
+        <p className='signup-link'>Already Have an Account <a href='/login'>Login?</a></p>
       </div>
     </div>
   );
