@@ -1,0 +1,40 @@
+/* ResumeTemplate2.css */
+
+.resume-template2 {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+  }
+  
+  .header {
+    text-align: center;
+  }
+  
+  .education,
+  .experience,
+  .projects,
+  .skills {
+    margin-top: 20px;
+  }
+  
+  .projects .project {
+    margin-bottom: 10px;
+  }
+  
+  .projects .project h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .skills p {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px;
+    background-color: #ddd;
+    border-radius: 4px;
+  }
+  

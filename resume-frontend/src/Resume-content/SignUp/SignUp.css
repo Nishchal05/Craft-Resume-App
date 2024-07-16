@@ -1,0 +1,25 @@
+.Signup{
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+.container-signup{
+    background-color: white;
+    display: flex;
+    flex-direction:column;
+    gap: 18px;
+    padding: 20px;
+    box-shadow: 3px 3px gray, -1em 0 .4em gray;
+}
+.container-signup div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+label{
+    display: flex;
+    gap: 5px;
+}

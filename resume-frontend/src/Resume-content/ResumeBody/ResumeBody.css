@@ -1,0 +1,159 @@
+main{
+    padding: 90px 60px;
+}
+main .Resumebody{
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 80px;
+}
+.resume-tag{
+    width: 44%;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.Resumebody h1{
+    font-size: 4rem;
+}
+.Build{
+    border-bottom: 1px solid black;
+    padding: 8px;
+    border-radius: 21px;
+    width: fit-content;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right,#00e6,#00e676);
+}
+span{
+    color: #00e676;
+}
+@media (max-width: 1130px) {
+    .img{
+        height: 600px;
+    }
+}
+.SelectTemplate{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.SelectTemplate span{
+    color: gray;
+}
+.SelectTemplate h1{
+    font-size: 4rem;
+    color: white;
+}
+.Templates{
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.ViewMore{
+    border-bottom: 1px solid black;
+    padding: 8px;
+    border-radius: 21px;
+    margin-top: 20px;
+    background: linear-gradient(to right,#00e6,#00e676);
+}
+.Templates div .Templateselction{
+    display: none;
+    cursor: pointer;
+}
+.Templates div:hover .Templateselction{
+    display: flex;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -170px;
+    z-index: 2000;
+    font-size: 1.8rem;
+    backdrop-filter: blur(10px);
+}
+@media (max-width: 1004px) {
+    .img{
+        height: 500px;
+    }
+    .Resumebody h1{
+        font-size: 3.3rem;
+    }
+}
+@media (max-width: 885px) {
+    .img{
+        height: 450px;
+    }
+    .Resumebody h1{
+        font-size: 3rem;
+    }
+}
+@media (max-width: 821px) {
+    .img{
+        height: 400px;
+    }
+    .Resumebody h1{
+        font-size: 2.5rem;
+    }
+}
+@media (max-width: 762px) {
+    .img{
+        height: 330px;
+    }
+    .Resumebody h1{
+        font-size: 2.7rem;
+    }
+}
+@media (max-width: 677px) {
+    .img{
+        height: 300px;
+    }
+    .Resumebody h1{
+        font-size: 2.2rem;
+    }
+    .Resumebody{
+        height: 500px;
+    }
+}
+@media (max-width: 642px) {
+    .img{
+        height: 260px;
+    }
+    .Resumebody h1{
+        font-size: 2rem;
+    }
+}
+@media (max-width: 593px) {
+    .img{
+        height: 240px;
+    }
+}
+@media (max-width: 568px) {
+    .img{
+        height: 200px;
+    }
+    .Resumebody h1{
+        font-size: 1.5rem;
+    }
+    main{
+        padding: 30px 60px;
+    }
+}
+@media (max-width: 520px) {
+    .img{
+        height: 160px;
+    }
+    .Resumebody h1{
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,146 @@
+.resume-info{
+    color: white;
+    padding: 40px 80px;
+    position: relative;
+    top: 70px;
+}
+.resume-info h1{
+    font-size: 4rem;
+}
+.resume-info ul li{
+    list-style-type: none;
+    border: 1px solid black;
+    width: 300px;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #00e6;
+    transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.resume-info ul li:hover{
+    transform: rotateY(360deg);
+}
+.resume-info ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+.Contact-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    color: black;
+    width: 300px;
+    padding: 10px;
+    border-radius: 12px;
+    gap: 5px;
+    box-shadow: 3px 3px gray, -0.4em 0 .4em gray;
+}
+.Contact-info h1{
+    font-size: 2rem;
+}
+.contact-edu-skill{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.Education-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    color: black;
+    width: 350px;
+    padding: 10px;
+    border-radius: 12px;
+    gap: 5px;
+    box-shadow: 3px 3px gray, -0.4em 0 .4em gray;
+}
+.Education-info h1{
+    font-size: 2rem;
+}
+.Skill{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    color: black;
+    width: 350px;
+    padding: 10px;
+    border-radius: 12px;
+    gap: 5px;
+    font-size: 2rem;
+    box-shadow: 3px 3px gray, -0.4em 0 .4em gray;
+}
+.Skill textarea{
+    height: 90px;
+    width: 100%;
+}
+.Experience{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    color: black;
+    width: 800px;
+    padding: 10px;
+    border-radius: 12px;
+    gap: 5px;
+    box-shadow: 3px 3px gray, -0.4em 0 .4em gray;
+    
+}
+.Experience h1{
+    font-size: 2rem;
+}
+.Experience-section, .project-section{
+    display: flex;
+    gap: 30px;
+}
+.Experience-section div ,  .project-section div{
+    background-color: gray;
+    border-radius: 12px;
+    padding: 10px;
+}
+.submit{
+    padding: 7px;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    background: linear-gradient(to right,#00e6,#00e676);
+    cursor: pointer;
+}
+@media (max-width:875px) {
+    .Experience{
+        width: 600px;
+    }
+}
+@media (max-width:645px) {
+    .Experience{
+        width: 500px;
+    }
+}
+@media (max-width:535px) {
+    .Experience{
+        width: 400px;
+    }
+    .Experience-section, .project-section{
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,27 @@
+.Resume{
+    position: relative;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Reviewsection{
+    color: white;
+}
+.Reviews{
+    position: relative;
+    left: -500px;
+    color: white;
+}
+.dwnload-edit{
+    display: flex;
+    gap: 10px;
+}
+.dwnload-edit button{
+    font-size: 1rem;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 12px;
+    background: linear-gradient(to right,#00e676,#00e7);
+}
