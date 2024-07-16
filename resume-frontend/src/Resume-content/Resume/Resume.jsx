@@ -9,14 +9,26 @@ import './Resume.css';
 import { Backendlink } from '../../Backendlink';
 
 const Resume = () => {
-  const auth = JSON.parse(localStorage.getItem('user'));
   const { selectedTemplate } = useContext(Selector);
   const [rating, setRating] = useState(5);
   const [review, setReview] = useState('');
   const [data, setData] = useState([]);
+  const [signdata,setsigndata]=useState([]);
   const templateRef = useRef();
+  const userdata=async()=>{
+    try{
+        const response=await fetch(`${Backendlink}/signup`)
+        const data= await response.json();
+        setsigndata(data);
+    }catch(error){
+        console.error("error in catch")
+    }
+  }
+  useEffect(()=>{
+    userdata()
+  },[])
 
-  const userId = auth ? auth.name : '';
+  const userId =signdata.name;
 
   const fetchReview = async () => {
     try {
