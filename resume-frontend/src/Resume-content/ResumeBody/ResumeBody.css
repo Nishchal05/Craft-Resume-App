@@ -66,6 +66,7 @@ span{
     border-radius: 21px;
     margin-top: 20px;
     background: linear-gradient(to right,#00e6,#00e676);
+    cursor: pointer;
 }
 .Templates div .Templateselction{
     display: none;
