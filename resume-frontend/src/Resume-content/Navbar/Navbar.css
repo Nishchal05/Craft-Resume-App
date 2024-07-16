@@ -92,4 +92,8 @@
   .hidden {
     display: none;
   }
+  .login-signup{
+    display: flex;
+    gap: 10px;
+  }
   
