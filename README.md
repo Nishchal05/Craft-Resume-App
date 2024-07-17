@@ -8,5 +8,5 @@ Responsive Design: Optimized for both desktop and mobile use.
 Tech Stack:
 React: For building the dynamic and interactive user interface.
 CSS: To create visually appealing designs.
-Material-UI Icons (MUI): For adding intuitive icons and enhancing the user experience.
+Material-UI Icons (MUI): For adding intuitive icons and enhancing the user experience.<br/>
 Live link:- https://lovely-mooncake-ae872b.netlify.app
