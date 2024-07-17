@@ -27,7 +27,7 @@ const Resume = () => {
   useEffect(()=>{
     userdata()
   },[])
-
+  console.log(signdata)
   const userId =signdata.name;
 
   const fetchReview = async () => {
