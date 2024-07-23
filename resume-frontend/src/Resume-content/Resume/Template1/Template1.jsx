@@ -8,7 +8,12 @@ const Template1 = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`${Backendlink}/Resume`);
+      const token = localStorage.getItem('token'); 
+      const response = await fetch(`${Backendlink}/Resume`, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
