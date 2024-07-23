@@ -23,6 +23,7 @@ const SignUp = () => {
                 }
             });
             const data = await response.json();
+            localStorage.setItem('token', data.token); 
             if (response.ok) {
                 setMatch(true);
                 navigate('/');
