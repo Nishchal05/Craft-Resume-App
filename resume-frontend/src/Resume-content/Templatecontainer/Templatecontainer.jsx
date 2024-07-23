@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Templatecontainer.css";
 import { Backendlink } from "../../Backendlink";
 import { Link } from "react-router-dom";
+
 const Templatecontainer = () => {
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
@@ -27,22 +28,27 @@ const Templatecontainer = () => {
   const [stack1, setstack1] = useState("");
   const [projecturl1, setprojecturl1] = useState("");
   const [projectlearn1, setprojectlearn1] = useState("");
-  const [data,setdata]=useState([]);
-  const userdata=async()=>{
-    try{
-        const response=await fetch(`${Backendlink}/signup`)
-        const data= await response.json();
-        setdata(data);
-    }catch(error){
-        console.error("error in catch")
+  const [data, setdata] = useState([]);
+
+  const userdata = async () => {
+    try {
+      const response = await fetch(`${Backendlink}/signup`);
+      const data = await response.json();
+      setdata(data);
+    } catch (error) {
+      console.error("error in catch");
     }
-  }
-  useEffect(()=>{
-    userdata()
-  },[])
-  const userid=data._id;
+  };
+
+  useEffect(() => {
+    userdata();
+  }, []);
+
+  const userid = data._id;
+
   const SendData = async () => {
     try {
+      const token = localStorage.getItem('token');
       const response = await fetch(`${Backendlink}/Resume`, {
         method: "POST",
         body: JSON.stringify({
@@ -74,16 +80,19 @@ const Templatecontainer = () => {
         }),
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
         },
       });
       if (!response.ok) {
         throw new Error("error in response");
       }
-      const data = await response.JSON();
-    } catch {
-      console.log("error in catch");
+      const data = await response.json();
+      console.log("Data submitted successfully:", data);
+    } catch (error) {
+      console.log("error in catch:", error);
     }
   };
+
   return (
     <div className="resume-info">
       <h1>ATS Friendly Resume</h1>
