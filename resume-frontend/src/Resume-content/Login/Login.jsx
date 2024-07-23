@@ -1,42 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import "./Login.css";
 import { Backendlink } from '../../Backendlink';
 import { useNavigate } from 'react-router-dom';
+import { MatcherContext } from '../../Login';
 
-const SignUp = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { setMatch } = useContext(MatcherContext); 
   const navigate = useNavigate();
+  const register=()=>{
+    navigate('/SignUp')
+  }
 
-  const signupDetail = async () => {
+  const loginDetail = async () => {
     try {
-      const response = await fetch(`${Backendlink}/Login`, {
+      const response = await fetch(`${Backendlink}/login`, {
         method: "POST",
-        body: JSON.stringify({  email, password }),
+        body: JSON.stringify({ email, password }),
         headers: {
           'Content-Type': 'application/json'
         }
       });
 
       const data = await response.json();
-
-      if (response.ok) {
-        localStorage.setItem('user', JSON.stringify(data));
+      localStorage.setItem('token', data.token); 
+      if (response.status === 404) {
+        alert("Account does not exist. Please register.");
+        navigate('/SignUp');
+      } else if (response.ok) {
+        setMatch(true);
         navigate('/');
       } else {
         alert(data.message || "An error occurred");
-        if (data.message === "User already exists") {
-          navigate('/login');
-        }
       }
     } catch (error) {
       console.error("Error:", error);
+      alert("An error occurred. Please try again.");
     }
   };
 
   return (
-    <div className='Signup'>
-      <div className='container-signup'>
+    <div className='Login'>
+      <div className='container-login'>
         <h1>Login</h1>
         <div>
           <label>
@@ -52,17 +58,17 @@ const SignUp = () => {
             Password:
             <input
               type='password'
-              placeholder='Set Password'
+              placeholder='Password'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </label>
-          <button onClick={signupDetail}>Create</button>
+          <button onClick={loginDetail}>Login</button>
         </div>
-        <p>Donot have Account <a href='/SignUp'>Register?</a></p>
+        <p className='login-link'>Don't have an Account? <a onClick={register}>Register</a></p>
       </div>
     </div>
   );
 };
 
-export default SignUp;
+export default Login;

@@ -9,24 +9,50 @@ import './Resume.css';
 import { Backendlink } from '../../Backendlink';
 
 const Resume = () => {
-  const auth = JSON.parse(localStorage.getItem('user'));
   const { selectedTemplate } = useContext(Selector);
   const [rating, setRating] = useState(5);
   const [review, setReview] = useState('');
-  const [data, setData] = useState([]);
+  const [Data, setData] = useState([]); 
+  const [signdata, setsigndata] = useState([]);
   const templateRef = useRef();
 
-  const userId = auth ? auth.name : '';
+  const userdata = async () => {
+    try {
+      const response = await fetch(`${Backendlink}/signup`);
+      const data = await response.json();
+      console.log("Signup data:", data);
+      setsigndata(Array.isArray(data) ? data : []); 
+    } catch (error) {
+      console.error("Error in catch:", error);
+    }
+  };
+
+  useEffect(() => {
+    userdata();
+  }, []);
+
+  console.log("Signdata:", signdata);
+  const userId = signdata.length > 0 ? signdata[0].name : ''; 
 
   const fetchReview = async () => {
     try {
-      const response = await fetch(`${Backendlink}/Review`);
+      const token = localStorage.getItem('token'); 
+      const response = await fetch(`${Backendlink}/Review`, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
       const data = await response.json();
-      setData(data);
+      if (Array.isArray(data)) {
+        setData(data);
+      } else {
+        console.error('Expected an array but got:', data);
+      }
     } catch (error) {
       console.error('Error in fetching reviews:', error);
     }
   };
+  
 
   useEffect(() => {
     fetchReview();
@@ -66,7 +92,6 @@ const Resume = () => {
       console.error('Error in downloading template:', error);
     }
   };
-  
 
   return (
     <div className='Resume'>
@@ -87,16 +112,18 @@ const Resume = () => {
       )}
       <div className='Reviews'>
         <h1>Reviews</h1>
-        {data
-          .filter((value) => value.selectedTemplate === selectedTemplate)
-          .map((value, index) => (
+        {Data.length > 0 ? (
+          Data.filter((value) => value.selectedTemplate === selectedTemplate).map((value, index) => (
             <div className='Reviewsection' key={index}>
               <h2>@{value.userId}</h2>
               <p>
                 Rating: {value.rating} Review: {value.review}
               </p>
             </div>
-          ))}
+          ))
+        ) : (
+          <p>No reviews available.</p>
+        )}
         <div>
           <h1>Add Review</h1>
           <div>

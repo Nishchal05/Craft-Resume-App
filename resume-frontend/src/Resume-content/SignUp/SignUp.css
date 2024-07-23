@@ -23,3 +23,6 @@ label{
     display: flex;
     gap: 5px;
 }
+.signup-link a{
+    color: blue;
+}

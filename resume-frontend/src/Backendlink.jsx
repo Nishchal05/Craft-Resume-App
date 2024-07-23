@@ -1,1 +1,1 @@
-export const Backendlink = "http://localhost:5000";
+export const Backendlink = "https://craft-resume-app.onrender.com";

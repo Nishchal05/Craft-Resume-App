@@ -65,6 +65,7 @@ span{
     padding: 8px;
     border-radius: 21px;
     margin-top: 20px;
+    cursor: pointer;
     background: linear-gradient(to right,#00e6,#00e676);
 }
 .Templates div .Templateselction{
@@ -124,6 +125,14 @@ span{
     .Resumebody{
         height: 500px;
     }
+    main .Resumebody{
+        position: relative;
+        top: -180px;
+    }
+    .SelectTemplate{
+        position: relative;
+        top: -390px;
+    }
 }
 @media (max-width: 642px) {
     .img{
@@ -145,7 +154,7 @@ span{
     .Resumebody h1{
         font-size: 1.5rem;
     }
-    main{
+        main{
         padding: 30px 60px;
     }
 }
@@ -156,4 +165,57 @@ span{
     .Resumebody h1{
         font-size: 1.1rem;
     }
+    main{
+        padding: 0px 60px;
+    }
+}
+@media (max-width: 660px) {
+    .Resumebody h1{
+        font-size: 1rem;
+    }
+    .Resumebody p{
+        font-size: 0.7rem;
+    }
+}
+@media (max-width: 459px) {
+    .Resumebody h1{
+        font-size: 0.8rem;
+    }
+    .Resumebody p{
+        font-size: 0.5rem;
+    }
+    .img{
+        height: 130px;
+    }
+}
+@media (max-width: 459px) {
+    .Resumebody h1{
+        font-size: 0.8rem;
+    }
+    .Resumebody p{
+        font-size: 0.5rem;
+    }
+    .img{
+        height: 130px;
+    }
+}@media (max-width: 439px) {
+    .Resumebody h1{
+        font-size: 1.5rem;
+    }
+    .Resumebody p{
+        font-size: 0.5rem;
+    }
+    .Build h1{
+        font-size: 0.5rem;
+    }
+    .img{
+        display: none;    }
+        main .Resumebody{
+            position: relative;
+            top: -100px;
+        }
+        .SelectTemplate{
+            position: relative;
+            top: -300px;
+        }
 }
