@@ -7,9 +7,11 @@ import Templatecontainer from './Resume-content/Templatecontainer/Templatecontai
 import Resume from './Resume-content/Resume/Resume';
 import SignUp from './Resume-content/SignUp/SignUp';
 import Login from './Resume-content/Login/Login';
+import { MatcherProvider } from './Login';
 const App = () => {
   return (
     <BrowserRouter>
+    <MatcherProvider>
       <Navbar />
       <SelectorTemplate>
         <Routes>
@@ -20,6 +22,7 @@ const App = () => {
           <Route path='/Login' element={<Login/>}/>
         </Routes>
       </SelectorTemplate>
+      </MatcherProvider>
     </BrowserRouter>
   );
 };
