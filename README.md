@@ -9,4 +9,4 @@ Tech Stack:
 React: For building the dynamic and interactive user interface.
 CSS: To create visually appealing designs.
 Material-UI Icons (MUI): For adding intuitive icons and enhancing the user experience.<br/>
-Live link:- resumecrafterapp.netlify.app
+Live link:- https://resumecrafterapp.netlify.app
